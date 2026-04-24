@@ -1,0 +1,38 @@
+# Executables
+*.exe
+*.out
+*.app
+
+# Object files
+*.o
+*.obj
+
+# Compiled libraries
+*.so
+*.dll
+*.dylib
+
+# Build folders
+build/
+bin/
+Debug/
+Release/
+.vs/
+# CMake
+CMakeFiles/
+CMakeCache.txt
+
+# Code::Blocks
+*.cbp
+*.layout
+*.depend
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
