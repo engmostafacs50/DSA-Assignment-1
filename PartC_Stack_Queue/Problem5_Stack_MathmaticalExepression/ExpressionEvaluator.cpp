@@ -26,42 +26,47 @@ pair<long long, int> Expression::evaluate(int idx)
 	while (idx < expression.size())
 	{
 		const auto &ch = expression[idx];
-		if (ch == ' ')
+		if (ch == ' ' || isdigit(ch))
 		{
-			idx++;
+			long long digit = 0;
+			while (idx < expression.size() && isdigit(expression[idx]))
+			{
+				digit = digit * 10 + (expression[idx] - '0');
+				idx++;
+			}
+			evalRes += sign * digit;
+
+			if (ch == ' ')
+				idx++;
+
 			continue;
 		}
 
-		if (!isdigit(ch))
+		switch (ch)
 		{
-			switch (ch)
-			{
-			case '+':
-			{
-				sign = 1;
-				break;
-			}
-			case '-':
-			{
-				sign = -1;
-				break;
-			}
-			case '(':
-			{
-				pair<long long, int> bracketRes = evaluate(idx + 1);
-				evalRes += sign * bracketRes.first;
-				idx = bracketRes.second;
-				break;
-			}
-			case ')':
-			{
-				return {evalRes, idx};
-				break;
-			}
-			}
+		case '+':
+		{
+			sign = 1;
+			break;
 		}
-		else
-			evalRes += sign * (ch - '0');
+		case '-':
+		{
+			sign = -1;
+			break;
+		}
+		case '(':
+		{
+			pair<long long, int> bracketRes = evaluate(idx + 1);
+			evalRes += sign * bracketRes.first;
+			idx = bracketRes.second;
+			break;
+		}
+		case ')':
+		{
+			return {evalRes, idx};
+			break;
+		}
+		}
 
 		idx++;
 	}
