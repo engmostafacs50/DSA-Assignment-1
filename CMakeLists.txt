@@ -31,3 +31,11 @@ add_executable(problem4
 target_include_directories(problem4 PRIVATE
     PartC_Stack_Queue/problem4_round_robin
 )
+
+add_executable(problem5 
+    PartC_Stack_Queue/Problem5_Stack_MathmaticalExepression/main.cpp
+)
+
+target_include_directories(problem5 PRIVATE
+    PartC_Stack_Queue/Problem5_Stack_MathmaticalExepression
+)
