@@ -10,7 +10,7 @@ class Expression
 private:
 	string expression;
 	bool isCalculated;
-	int result;
+	long long result;
 	stack<int> nums; // Didn't actually use it
 
 	pair<long long, int> evaluate(int idx);
