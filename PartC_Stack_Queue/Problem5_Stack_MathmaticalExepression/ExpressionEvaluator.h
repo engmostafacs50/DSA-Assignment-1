@@ -11,12 +11,13 @@ private:
 	string expression;
 	bool isCalculated;
 	long long result;
-	stack<int> nums; // Didn't actually use it
 
-	pair<long long, int> evaluate(int idx);
-
-public:
+	long long evaluateWithStack(int idx);
+	pair<long long, int> evaluateWithRecursion(int idx);
+	
+	public:
 	Expression(const string &expression);
 	void updateExpression(const string &s);
-	long long evaluate();
+	long long evaluateWithStack();
+	long long evaluateWithRecursion();
 };
