@@ -1,9 +1,12 @@
-#include"ExpressionEvaluator.h"
-#include<iostream>
-using namespace std; 
+#include "ExpressionEvaluator.h"
+#include <iostream>
+
+using namespace std;
+
 int main()
 {
-	Expression expression("(1+(4+5+2)-3)+(6+8)");
-	expression.evaluate();
-	cout << expression.getResult() << endl;
+	string s = "(1+(4+5+2)-3)+(6+8)";
+	// cin >> s;
+	Expression expression(s);
+	cout << expression.evaluate() << endl;
 }
