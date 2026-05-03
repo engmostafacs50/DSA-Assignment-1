@@ -11,7 +11,7 @@ private:
 	string expression;
 	bool isCalculated;
 	int result;
-	stack<int> nums;
+	stack<int> nums; // Didn't actually use it
 
 	pair<long long, int> evaluate(int idx);
 
