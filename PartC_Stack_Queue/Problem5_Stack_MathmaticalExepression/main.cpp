@@ -3,7 +3,7 @@
 using namespace std; 
 int main()
 {
-	Expression expression("(1+(4+5+2)-3)+(6+8)");
+	Expression expression("2-1+2");
 	expression.evaluate();
 	cout << expression.getResult() << endl;
 }

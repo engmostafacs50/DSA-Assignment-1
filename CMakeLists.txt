@@ -39,3 +39,11 @@ add_executable(problem5
 target_include_directories(problem5 PRIVATE
     PartC_Stack_Queue/Problem5_Stack_MathmaticalExepression
 )
+
+add_executable(problem6 
+    PartC_Stack_Queue/Problem6_Stack_nextGreaterNumber/main.cpp
+)
+
+target_include_directories(problem6 PRIVATE
+    PartC_Stack_Queue/Promlem6_Stack_nextGreaterNumber
+)
