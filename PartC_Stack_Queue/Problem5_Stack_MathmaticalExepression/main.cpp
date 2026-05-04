@@ -1,9 +1,14 @@
-#include"ExpressionEvaluator.h"
-#include<iostream>
-using namespace std; 
+#include "ExpressionEvaluator.h"
+#include <iostream>
+
+using namespace std;
+
 int main()
 {
-	Expression expression("2-1+2");
-	expression.evaluate();
-	cout << expression.getResult() << endl;
+
+	string s = "10 + 11 + 12 - 11 - (1 + 1)"; // cin >> s;
+	Expression expression(s);
+	cout << expression.evaluateWithRecursion() << endl;
+	cout << expression.evaluateWithStack() << endl;
+
 }

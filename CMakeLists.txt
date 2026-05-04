@@ -16,7 +16,6 @@ target_include_directories(problem2 PRIVATE
 
 add_executable(problem3
     PartB_Search_Sorting/problem3_bitonic_array/main.cpp
- 
  )
 
 target_include_directories(problem3 PRIVATE
@@ -34,6 +33,7 @@ target_include_directories(problem4 PRIVATE
 
 add_executable(problem5 
     PartC_Stack_Queue/Problem5_Stack_MathmaticalExepression/main.cpp
+    PartC_Stack_Queue/Problem5_Stack_MathmaticalExepression/ExpressionEvaluator.cpp
 )
 
 target_include_directories(problem5 PRIVATE
