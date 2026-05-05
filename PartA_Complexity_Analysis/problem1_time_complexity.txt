@@ -1,0 +1,63 @@
+Code 1:
+
+int hello_recursive(int n) {
+	if (n <= 1) return 1;
+	return hello_recursive(n - 1) + hello_recursive(n - 2);
+}
+
+answer:
+
+This is simple a recursive function that evaluates the term with index n
+in fibonacci sequence where n starts from 0 (0-indexed)
+
+The time complexity of this function is equal to O(2^n) this can be proven
+by drawing a recursion tree for it where every function call starts two
+new calls until we reach the base case (n <= 1)
+
+
+						fib(5)
+                       /      \
+                  fib(4)      fib(3)
+                 /     \      /    \
+            fib(3)   fib(2) fib(2) fib(1)
+            /    \    /  \   /  \
+        fib(2) fib(1) f(1) f(0) f(1)
+        /   \   
+    fib(1) fib(0)
+
+
+time complexity = O(2^n)
+
+
+
+Code 2:
+
+void test(int n) {
+	int i = n;
+	while (i > 1) {
+		int j = 1;
+		while (j < i) {
+			j *= 2;
+		}
+		i /= 2;
+	}
+}
+
+answer:
+
+The time complexity of the inner loop depends on the value of i which is initially
+equal to n and j is multiplied by two each iteration so the time complexity of
+this loop is equal to O(log(n)) in the first iteration then we divide i by 2 so the
+inner loop becomes O(log(n / 2)) and so on, then we can say that the total time
+of the inner loop is equal to O(log(n) + log(n / 2) + log(n / 4) + ....) until i
+becomes equal to 1.
+
+log(n) + log(n / 2) + log(n / 4) + .... = log(n) + (log(n) - log(2)) + (log(n) - log(4)) + ....
+
+the number of terms that depend on n on the right hand side is equal to log(n)
+as i divided by 2 log(n) times until it reaches 1 so...
+
+log(n) + log(n) + .... - (log(2) + log(4) + ....) = log(n) * log(n) - (log(2) + log(4) + ....)
+
+then the final time complexity of the test function = O(log^2(n) + (log(2) + log(4) + ....))
+which equals O(log^2(n))
