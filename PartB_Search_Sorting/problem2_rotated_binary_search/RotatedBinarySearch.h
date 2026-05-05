@@ -1,13 +1,19 @@
 #pragma once
+
 #include <vector>
+
 using namespace std;
 
-class RotatedBinarySearch {
+class RotatedBinarySearch
+{
 private:
-    vector<double> vec;
-    double target;
+	vector<double> vec;
+	double target;
+	int comparisonsCount;
+
 public:
-    RotatedBinarySearch(vector<double> v, double t);
-    int binarySearch();
-    void printResult();
+	RotatedBinarySearch(vector<double> v, double t);
+	int binarySearch();
+	void printResult();
+	int getTotalComparisons() const;
 };
