@@ -11,4 +11,5 @@ int main()
 	cout << expression.evaluateWithRecursion() << endl;
 	cout << expression.evaluateWithStack() << endl;
 
+	return 0;
 }
