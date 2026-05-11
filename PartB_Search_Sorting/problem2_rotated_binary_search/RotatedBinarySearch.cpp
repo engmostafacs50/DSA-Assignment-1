@@ -29,27 +29,19 @@ int RotatedBinarySearch::binarySearch()
 		}
 		else if (vec[left] <= vec[mid])
 		{
-			comparisonsCount += 5;
+			comparisonsCount += 6;
 			if (vec[left] <= target && target < vec[mid])
-			{
 				right = mid - 1;
-			}
 			else
-			{
 				left = mid + 1;
-			}
 		}
 		else
 		{
-			comparisonsCount += 5;
+			comparisonsCount += 6;
 			if (vec[mid] < target && target <= vec[right])
-			{
 				left = mid + 1;
-			}
 			else
-			{
 				right = mid - 1;
-			}
 		}
 	}
 
@@ -60,13 +52,9 @@ void RotatedBinarySearch::printResult()
 {
 	int result = binarySearch();
 	if (result == -1)
-	{
 		cout << "Target doesn't exist\n";
-	}
 	else
-	{
 		cout << "Found at " << result << endl;
-	}
 	cout << "Total comparisons count = " << comparisonsCount << endl;
 }
 
