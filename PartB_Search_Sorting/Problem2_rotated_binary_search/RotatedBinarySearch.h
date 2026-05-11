@@ -12,7 +12,7 @@ private:
 	int comparisonsCount;
 
 public:
-	RotatedBinarySearch(vector<double> v, double t);
+	RotatedBinarySearch(const vector<double> &v, double t);
 	int binarySearch();
 	void printResult();
 	int getTotalComparisons() const;

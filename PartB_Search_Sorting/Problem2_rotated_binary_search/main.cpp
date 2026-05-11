@@ -4,7 +4,9 @@
 
 int main()
 {
+	// Time Complexity = O(log(n))
+	
 	vector<double> v1 = {5, 6, 7, 1, 2, 3, 4};
-	RotatedBinarySearch obj(v1, 7);
+	RotatedBinarySearch obj(v1, 6);
 	obj.printResult();
 }

@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-RotatedBinarySearch::RotatedBinarySearch(vector<double> v, double t)
+RotatedBinarySearch::RotatedBinarySearch(const vector<double> &v, double t)
 {
 	vec = v;
 	target = t;
@@ -23,13 +23,13 @@ int RotatedBinarySearch::binarySearch()
 
 		if (vec[left] == vec[mid] && vec[mid] == vec[right])
 		{
-			comparisonsCount += 2;
+			comparisonsCount += 1;
 			left++;
 			right--;
 		}
 		else if (vec[left] <= vec[mid])
 		{
-			comparisonsCount += 6;
+			comparisonsCount += 5;
 			if (vec[left] <= target && target < vec[mid])
 				right = mid - 1;
 			else
@@ -37,7 +37,7 @@ int RotatedBinarySearch::binarySearch()
 		}
 		else
 		{
-			comparisonsCount += 6;
+			comparisonsCount += 5;
 			if (vec[mid] < target && target <= vec[right])
 				left = mid + 1;
 			else
